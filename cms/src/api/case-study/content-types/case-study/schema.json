@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "客户案例",
+    "description": "客户案例展示"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["esg", "japan-dev", "servicenow", "power-platform", "digital"],
+      "default": "digital"
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "coverImage": {
+      "type": "string"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "联系我们",
+    "description": "联系我们表单提交"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "source": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["new", "viewed", "replied", "closed"],
+      "default": "new",
+      "required": true
+    },
+    "adminNote": {
+      "type": "text"
+    }
+  }
+}

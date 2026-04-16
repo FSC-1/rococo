@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "configs",
+  "info": {
+    "singularName": "config",
+    "pluralName": "configs",
+    "displayName": "网站配置",
+    "description": "网站全局配置"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "default": "宁波乐科科信息技术有限公司"
+    },
+    "companyAddress": {
+      "type": "string",
+      "default": "宁波市鄞州区天童北路933号和邦大厦A1802室"
+    },
+    "companyPhone": {
+      "type": "string",
+      "default": "0574-28860655"
+    },
+    "companyEmail": {
+      "type": "string",
+      "default": "nb_sales@rococo.co.jp"
+    },
+    "icpNumber": {
+      "type": "string",
+      "default": "浙ICP备10037731号-5"
+    },
+    "copyright": {
+      "type": "string",
+      "default": "© 宁波乐科科信息技术有限公司"
+    },
+    "heroTitle": {
+      "type": "string",
+      "default": "我们的追求是让信息化切实助力企业发展"
+    },
+    "heroSubtitle": {
+      "type": "string",
+      "default": "我们的努力都是为了让信息化，更容易"
+    }
+  }
+}

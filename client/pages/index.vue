@@ -1,0 +1,76 @@
+<template>
+  <div>
+    <!-- Hero Section -->
+    <HomeHeroSection
+      :hero-title="config?.heroTitle || '我们的追求是让信息化切实助力企业发展'"
+      :hero-subtitle="config?.heroSubtitle || '我们的努力都是为了让信息化，更容易'"
+    />
+
+    <!-- Services Section -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <CommonSectionTitle
+          title="核心服务"
+          subtitle="四大服务模块，全方位助力企业数字化转型"
+        />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+          <HomeServiceCard
+            v-for="service in services"
+            :key="service.title"
+            v-bind="service"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <HomeProductShowcase />
+
+    <!-- News Section -->
+    <HomeNewsSection :news-list="newsList" />
+
+    <!-- Contact Info -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <CommonSectionTitle
+              title="联系我们"
+              subtitle="有任何问题或咨询需求，欢迎随时联系我们"
+            />
+            <div class="mt-8">
+              <CommonContactInfo />
+            </div>
+          </div>
+          <div>
+            <CommonContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { services } from '~/utils/constants'
+
+// SEO
+useSeoMeta({
+  title: '宁波乐科科信息技术有限公司 - 专业的数字化转型服务商',
+  description: '宁波乐科科信息技术有限公司提供定制化软件开发、低代码平台开发、数字化转型咨询等服务',
+  ogTitle: '宁波乐科科信息技术有限公司',
+  ogDescription: '专业的数字化转型服务商',
+})
+
+// Fetch data
+const { fetchNews, fetchConfig } = useStrapi()
+
+const [newsResponse, configResponse] = await Promise.all([
+  fetchNews({ pageSize: 6 }),
+  fetchConfig(),
+])
+
+const newsList = newsResponse?.data || []
+const config = configResponse?.data || null
+</script>

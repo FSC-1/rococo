@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.nuxt/
+.output/
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+
+# Claude settings
+.claude/
