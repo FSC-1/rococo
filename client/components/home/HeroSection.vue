@@ -25,14 +25,9 @@
         </div>
 
         <!-- Main Heading -->
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-          <span class="block fade-up" style="animation-delay: 100ms;">{{ heroTitle }}</span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight fade-up" style="animation-delay: 100ms;">
+          {{ heroTitle }}
         </h1>
-
-        <!-- Subtitle -->
-        <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto fade-up" style="animation-delay: 200ms;">
-          {{ heroSubtitle }}
-        </p>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up" style="animation-delay: 300ms;">
@@ -77,6 +72,5 @@
 <script setup lang="ts">
 defineProps<{
   heroTitle: string
-  heroSubtitle: string
 }>()
 </script>

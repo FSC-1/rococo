@@ -3,7 +3,6 @@
     <!-- Hero Section -->
     <HomeHeroSection
       :hero-title="config?.heroTitle || '我们的追求是让信息化切实助力企业发展'"
-      :hero-subtitle="config?.heroSubtitle || '我们的努力都是为了让信息化，更容易'"
     />
 
     <!-- Services Section -->
