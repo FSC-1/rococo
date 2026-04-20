@@ -10,10 +10,20 @@ export default defineNuxtConfig({
     '@nuxt/icon',
   ],
 
+  // SPA mode for GitHub Pages
+  ssr: false,
+
   // Runtime config
   runtimeConfig: {
     public: {
       strapiUrl: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
+    },
+  },
+
+  // Nitro config for static generation
+  nitro: {
+    prerender: {
+      failOnError: false,
     },
   },
 
@@ -22,6 +32,7 @@ export default defineNuxtConfig({
 
   // App
   app: {
+    baseURL: '/rococo/',
     head: {
       title: '宁波乐科科信息技术有限公司',
       meta: [
