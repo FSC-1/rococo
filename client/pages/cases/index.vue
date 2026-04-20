@@ -91,9 +91,10 @@ useSeoMeta({
   description: '查看乐科科的成功案例，了解我们在ESG、对日开发、ServiceNow等领域的专业能力',
 })
 
+const route = useRoute()
 const { fetchCaseStudies } = useStrapi()
 
-const selectedCategory = ref('all')
+const selectedCategory = ref((route.query.category as string) || 'all')
 const categories = [
   { value: 'all', label: '全部' },
   ...caseCategories,
@@ -102,6 +103,14 @@ const categories = [
 // Fetch cases
 const response = await fetchCaseStudies({ pageSize: 50 })
 const allCases = response?.data || []
+
+// Watch for route query changes to update filter
+watch(
+  () => route.query.category,
+  (newCategory) => {
+    selectedCategory.value = (newCategory as string) || 'all'
+  }
+)
 
 const filteredCases = computed(() => {
   if (selectedCategory.value === 'all') {

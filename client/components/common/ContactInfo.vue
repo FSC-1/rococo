@@ -22,7 +22,7 @@
         </div>
         <div>
           <p class="font-semibold text-gray-900 mb-1">电话</p>
-          <a href="tel:0574-28860655" class="text-primary-600 hover:text-primary-700 transition-colors">0574-28860655</a>
+          <a href="tel:+86-574-28860655" class="text-primary-600 hover:text-primary-700 transition-colors">+86-574-28860655</a>
         </div>
       </div>
       <div class="flex items-start group">

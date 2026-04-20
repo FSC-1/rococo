@@ -11,10 +11,7 @@
         <!-- Company Info -->
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-3 mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-600/20">
-              <span class="text-white font-bold text-xl">R</span>
-            </div>
-            <span class="text-2xl font-bold text-white">乐科科</span>
+            <img src="/rococoud.png" alt="Rococo" class="h-12 w-auto" />
           </div>
           <p class="text-gray-400 mb-6 leading-relaxed max-w-md">
             专业的数字化转型服务商，致力于为企业提供信息化咨询、软件开发与维护服务。
@@ -30,7 +27,7 @@
               <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mr-3">
                 <Icon name="ph:phone" class="w-5 h-5" />
               </div>
-              <a href="tel:0574-28860655" class="hover:text-primary-400 transition-colors">0574-28860655</a>
+              <a href="tel:+86-574-28860655" class="hover:text-primary-400 transition-colors">+86-574-28860655</a>
             </div>
             <div class="flex items-center text-gray-400 hover:text-white transition-colors duration-300">
               <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center mr-3">

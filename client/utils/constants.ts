@@ -10,7 +10,7 @@ export const services = [
     icon: 'ph:chat-circle-text',
     title: '数字化咨询',
     description: '助力数字化建设，提供专业化咨询。分析业务需求，对接优质服务商',
-    to: '/digital-transform',
+    to: '/tech-consulting',
   },
   {
     icon: 'ph:lightning',
@@ -22,7 +22,7 @@ export const services = [
     icon: 'ph:arrows-clockwise',
     title: '系统重构',
     description: '老旧系统现代化改造专家。平滑过渡、持续运营，让企业IT资产焕发新生',
-    to: '/digital-transform#system-refactor',
+    to: '/digital-transform',
   },
 ]
 
@@ -30,9 +30,10 @@ export const services = [
 export const caseCategories = [
   { value: 'esg', label: 'ESG平台' },
   { value: 'japan-dev', label: '对日开发' },
-  { value: 'servicenow', label: 'ServiceNow' },
+  { value: 'servicenow', label: 'ServiceNow开发' },
   { value: 'power-platform', label: 'Power Platform' },
-  { value: 'digital', label: '数字化转型' },
+  { value: 'consulting', label: 'IT咨询' },
+  { value: 'system-refactor', label: '系统重构' },
 ]
 
 // 联系表单状态

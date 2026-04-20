@@ -4,7 +4,8 @@
     <section class="bg-gradient-to-br from-primary-50 to-secondary-50 section-padding">
       <div class="container-custom text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">低代码平台开发</h1>
-        <p class="text-xl text-gray-600">快速构建，灵活部署，让业务创新触手可及</p>
+        <p class="text-xl text-primary-600 font-medium">基于低代码和 SaaS 模型的企业服务管理平台</p>
+        <p class="text-lg text-gray-600 mt-2">实现 IT 业务的高效化和可视化，快速、灵活的业务应用部署</p>
       </div>
     </section>
 
@@ -15,7 +16,7 @@
           <div>
             <h2 class="text-3xl font-bold mb-4">ServiceNow</h2>
             <p class="text-gray-600 mb-6">
-              ServiceNow是一款基于低代码和SaaS模型的企业服务管理平台，通过简化开发流程和提供云端服务，实现快速、灵活的业务应用部署。
+              ServiceNow 是基于低代码和 SaaS 模型的企业服务管理平台，核心目标是实现 IT 业务的高效化和可视化。
             </p>
             <div class="space-y-4">
               <div class="flex items-start">
@@ -45,12 +46,32 @@
                 乐科科中国拥有 ServiceNow 8年项目实施经验，合作企业包括通信、物流、金融、制造等多个领域。
               </p>
             </div>
+            <div class="mt-6">
+              <NuxtLink to="/cases?category=servicenow" class="btn-primary inline-flex items-center">
+                <Icon name="ph:folder-open" class="w-5 h-5 mr-2" />
+                查看 ServiceNow 客户案例
+              </NuxtLink>
+            </div>
           </div>
           <div class="bg-gray-100 rounded-2xl p-8">
             <div class="text-center">
               <Icon name="ph:gear-six" class="w-24 h-24 text-primary-600 mx-auto mb-4" />
               <h3 class="text-xl font-bold mb-2">ServiceNow</h3>
               <p class="text-gray-600">企业服务管理平台</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Core Benefits -->
+        <div class="mt-16">
+          <h3 class="text-2xl font-bold text-center mb-10">工作流改革价值</h3>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <div v-for="benefit in servicenowBenefits" :key="benefit.title" class="text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Icon :name="benefit.icon" class="w-8 h-8 text-primary-600" />
+              </div>
+              <h4 class="font-semibold text-gray-900 mb-2">{{ benefit.title }}</h4>
+              <p class="text-gray-600 text-sm">{{ benefit.description }}</p>
             </div>
           </div>
         </div>
@@ -96,6 +117,12 @@
                 </div>
               </div>
             </div>
+            <div class="mt-6">
+              <NuxtLink to="/cases?category=power-platform" class="btn-primary inline-flex items-center">
+                <Icon name="ph:folder-open" class="w-5 h-5 mr-2" />
+                查看 Power Platform 客户案例
+              </NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -120,4 +147,12 @@ useSeoMeta({
   title: '低代码平台开发 - 宁波乐科科信息技术有限公司',
   description: '基于ServiceNow与Microsoft Power Platform的低代码平台开发服务',
 })
+
+const servicenowBenefits = [
+  { icon: 'ph:currency-dollar', title: '降低开发成本', description: '低代码开发模式减少开发投入' },
+  { icon: 'ph:simplify', title: '简化工作', description: '自动化流程简化日常事务' },
+  { icon: 'ph:chart-line-up', title: '提高工作效率', description: '优化流程提升团队生产力' },
+  { icon: 'ph:shield-check', title: '风险控制', description: '规范化管理降低业务风险' },
+  { icon: 'ph:git-branch', title: 'IT服务管理', description: '建立完整的IT服务管理流程' },
+]
 </script>
