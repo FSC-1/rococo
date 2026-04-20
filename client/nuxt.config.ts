@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 
   // App
   app: {
-    baseURL: '/rococo/',
+    baseURL: './',
     head: {
       title: '宁波乐科科信息技术有限公司',
       meta: [

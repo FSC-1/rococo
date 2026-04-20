@@ -203,7 +203,7 @@ const navItems = [
     ],
   },
   {
-    name: '技术服务',
+    name: '低代码平台',
     children: [
       { name: 'ServiceNow开发', path: '/servicenow' },
       { name: 'Power Platform', path: '/power-platform' },

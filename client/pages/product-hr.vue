@@ -3,6 +3,7 @@
     <!-- Hero -->
     <section class="bg-gradient-to-br from-primary-50 to-secondary-50 section-padding">
       <div class="container-custom text-center">
+        <img src="/hr++.png" alt="HR++" class="w-48 h-48 mx-auto mb-6 object-contain" />
         <h1 class="text-4xl md:text-5xl font-bold mb-4">HR++ 人事管理系统</h1>
         <p class="text-xl text-gray-600">更懂你的HR系统，让人事管理更简单高效</p>
       </div>

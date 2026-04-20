@@ -18,18 +18,7 @@
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <!-- Icon -->
             <div class="flex justify-center md:justify-start">
-              <div class="relative">
-                <div class="w-28 h-28 bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 rounded-3xl flex items-center justify-center shadow-xl shadow-primary-600/30 group-hover:scale-105 transition-transform duration-500">
-                  <Icon name="ph:users-three" class="w-14 h-14 text-white" />
-                </div>
-                <!-- Decorative elements -->
-                <div class="absolute -top-3 -right-3 w-10 h-10 bg-secondary-400 rounded-xl flex items-center justify-center shadow-lg -rotate-12">
-                  <Icon name="ph:lightning" class="w-5 h-5 text-white" />
-                </div>
-                <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-primary-300 rounded-lg flex items-center justify-center rotate-12">
-                  <Icon name="ph:sparkle" class="w-3 h-3 text-white" />
-                </div>
-              </div>
+              <img src="/hr++.png" alt="HR++" class="w-48 h-48 object-contain group-hover:scale-105 transition-transform duration-500" />
             </div>
 
             <!-- Content -->
