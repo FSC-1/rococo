@@ -4,8 +4,7 @@ export const useStrapi = () => {
 
   // Mock data for static generation without backend
   const mockConfig = {
-    heroTitle: '我们的追求是让信息化切实助力企业发展',
-    heroSubtitle: '我们的努力都是为了让信息化，更容易',
+    heroTitle: '我们的努力都是为了让数字化，更容易',
   }
 
   const mockNews = [
