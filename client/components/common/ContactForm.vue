@@ -63,6 +63,47 @@
         ></textarea>
       </div>
 
+      <!-- Source Selection -->
+      <div class="space-y-3">
+        <label class="block text-sm font-medium text-gray-700">您从哪里了解到我们？</label>
+        <div class="flex flex-wrap gap-3">
+          <label
+            v-for="option in sourceOptions"
+            :key="option"
+            class="inline-flex items-center gap-2 px-4 py-2 border rounded-full cursor-pointer transition-all duration-300"
+            :class="form.source.includes(option)
+              ? 'bg-primary-50 border-primary-500 text-primary-700'
+              : 'bg-gray-50 border-gray-200 text-gray-600 hover:border-primary-300 hover:bg-primary-50'"
+          >
+            <input
+              type="checkbox"
+              :value="option"
+              v-model="form.source"
+              class="hidden"
+            />
+            <span class="text-sm">{{ option }}</span>
+          </label>
+        </div>
+        <!-- Other source input -->
+        <Transition
+          enter-active-class="transition-all duration-300 ease-out"
+          enter-from-class="opacity-0 -translate-y-2"
+          enter-to-class="opacity-100 translate-y-0"
+          leave-active-class="transition-all duration-200 ease-in"
+          leave-from-class="opacity-100 translate-y-0"
+          leave-to-class="opacity-0 -translate-y-2"
+        >
+          <div v-if="form.source.includes('其他')" class="mt-3">
+            <input
+              v-model="form.sourceOther"
+              type="text"
+              class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-gray-50 focus:bg-white"
+              placeholder="请输入其他渠道"
+            />
+          </div>
+        </Transition>
+      </div>
+
       <!-- Success Message -->
       <Transition
         enter-active-class="transition-all duration-300 ease-out"
@@ -109,12 +150,16 @@
 <script setup lang="ts">
 const { submitContact } = useStrapi()
 
+const sourceOptions = ['抖音', 'QQ', '微信公众号', '朋友推荐', '搜索引擎', '其他']
+
 const form = reactive({
   name: '',
   company: '',
   email: '',
   phone: '',
   message: '',
+  source: [] as string[],
+  sourceOther: '',
 })
 
 const submitting = ref(false)
@@ -127,9 +172,19 @@ const submitForm = async () => {
   errorMessage.value = ''
 
   try {
+    // Process source: combine selected options with "其他" text if provided
+    let sourceValue = form.source.join(', ')
+    if (form.source.includes('其他') && form.sourceOther.trim()) {
+      sourceValue += `: ${form.sourceOther.trim()}`
+    }
+
     await submitContact({
-      ...form,
-      source: window.location.pathname,
+      name: form.name,
+      company: form.company,
+      email: form.email,
+      phone: form.phone,
+      message: form.message,
+      source: sourceValue,
       status: 'new',
     })
     successMessage.value = '提交成功！我们会尽快与您联系。'
@@ -140,6 +195,8 @@ const submitForm = async () => {
       email: '',
       phone: '',
       message: '',
+      source: [],
+      sourceOther: '',
     })
   } catch (error) {
     errorMessage.value = '提交失败，请稍后重试或通过电话联系我们。'
