@@ -192,7 +192,6 @@ const navItems = [
       { name: '低代码平台', path: '/low-code' },
       { name: '数字化转型', path: '/digital-transform' },
       { name: '产品-HR++', path: '/product-hr' },
-      { name: '客户案例', path: '/cases' },
     ],
   },
   {
@@ -209,7 +208,15 @@ const navItems = [
       { name: 'Power Platform', path: '/power-platform' },
     ],
   },
-  { name: '关于我们', path: '/about' },
+  { name: '客户案例', path: '/cases' },
+  {
+    name: '关于我们',
+    children: [
+      { name: 'Rococo集团', path: '/about-group' },
+      { name: 'Rococo中国', path: '/about-china' },
+      { name: '加入我们', path: '/join-us' },
+    ],
+  },
 ]
 
 function showDropdown(name: string) {

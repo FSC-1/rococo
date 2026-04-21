@@ -25,9 +25,14 @@
         </div>
 
         <!-- Main Heading -->
-        <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold text-gray-900 mb-6 leading-tight fade-up" style="animation-delay: 100ms;">
-          我们的努力都是为了<br class="hidden md:block" /><span class="inline-block">让数字化，更容易</span>
-        </h1>
+        <div class="mb-6 fade-up" style="animation-delay: 100ms;">
+          <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-700 mb-4 leading-[1.8]">
+            我们的努力都是为了
+          </p>
+          <p class="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.6] bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+            让数字化，更容易
+          </p>
+        </div>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up" style="animation-delay: 300ms;">

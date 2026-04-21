@@ -17,13 +17,73 @@
           subtitle="全方位覆盖企业人事管理需求"
         />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
-          <div v-for="feature in features" :key="feature.title" class="card p-6 text-center">
-            <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Icon :name="feature.icon" class="w-7 h-7 text-primary-600" />
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-8">
+          <!-- Feature Cards -->
+          <div class="lg:col-span-2 grid grid-cols-2 gap-4 stagger-children">
+            <div
+              v-for="feature in features"
+              :key="feature.title"
+              class="card p-5 text-center cursor-pointer transition-all duration-300 hover:shadow-lg"
+              :class="selectedFeature === feature.title ? 'ring-2 ring-primary-500 bg-primary-50' : ''"
+              @click="selectedFeature = feature.title"
+            >
+              <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Icon :name="feature.icon" class="w-6 h-6 text-primary-600" />
+              </div>
+              <h3 class="text-base font-semibold mb-1">{{ feature.title }}</h3>
+              <p class="text-gray-500 text-xs">{{ feature.description }}</p>
             </div>
-            <h3 class="text-lg font-semibold mb-2">{{ feature.title }}</h3>
-            <p class="text-gray-600 text-sm">{{ feature.description }}</p>
+          </div>
+
+          <!-- Image Display -->
+          <div class="lg:col-span-3">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden h-full min-h-[400px] flex items-center justify-center relative">
+              <div v-if="currentImage" class="w-full h-full flex flex-col items-center justify-center p-8">
+                <div class="bg-white rounded-xl shadow-lg p-4 mb-4 w-full max-w-md">
+                  <img
+                    :src="currentImage"
+                    :alt="selectedFeature"
+                    class="w-full h-auto rounded-lg"
+                  />
+                </div>
+                <p class="text-gray-600 font-medium">{{ selectedFeature }}</p>
+              </div>
+              <div v-else-if="selectedFeature" class="text-center text-gray-400">
+                <Icon name="ph:image" class="w-16 h-16 mx-auto mb-4" />
+                <p>暂无截图</p>
+              </div>
+              <div v-else class="text-center text-gray-400">
+                <Icon name="ph:image" class="w-16 h-16 mx-auto mb-4" />
+                <p>点击左侧功能查看截图</p>
+              </div>
+
+              <!-- Navigation Arrows -->
+              <div v-if="currentImages.length > 1" class="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+                <button
+                  class="w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white pointer-events-auto transition-colors opacity-50 hover:opacity-100"
+                  @click.stop="prevImage"
+                >
+                  <Icon name="ph:caret-left" class="w-6 h-6" />
+                </button>
+                <button
+                  class="w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white pointer-events-auto transition-colors opacity-50 hover:opacity-100"
+                  @click.stop="nextImage"
+                >
+                  <Icon name="ph:caret-right" class="w-6 h-6" />
+                </button>
+              </div>
+
+              <!-- Image Indicators -->
+              <div v-if="currentImages.length > 1" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <button
+                  v-for="(img, index) in currentImages"
+                  :key="index"
+                  class="w-2 h-2 rounded-full transition-all"
+                  :class="currentImageIndex === index ? 'bg-primary-600 w-4' : 'bg-gray-300'"
+                  @click.stop="currentImageIndex = index"
+                ></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -78,8 +138,11 @@ useSeoMeta({
   description: 'HR++人事管理系统 - 更懂你的HR系统，让人事管理更简单高效',
 })
 
+const selectedFeature = ref<string | null>('仪表盘')
+const currentImageIndex = ref(0)
+
 const features = [
-  { icon: 'ph:chart-line-up', title: '仪表盘', description: '直观显示人事入离转调信息，信息可穿透至个人' },
+  { icon: 'ph:chart-line-up', title: '仪表盘', description: '直观显示人事入离转调信息' },
   { icon: 'ph:users', title: '花名册', description: '员工信息集中管理' },
   { icon: 'ph:bell', title: '业务提醒', description: '待办事项智能提醒' },
   { icon: 'ph:clock', title: '考勤', description: '考勤数据管理与统计' },
@@ -88,6 +151,50 @@ const features = [
   { icon: 'ph:flow-arrow', title: '流程管理', description: '审批流程自定义配置' },
   { icon: 'ph:device-mobile', title: '移动端', description: '支持移动设备访问' },
 ]
+
+// Feature images mapping
+const featureImages: Record<string, string[]> = {
+  '仪表盘': ['/dashboard.png', '/dashboard-1.png', '/dashboard-2.png'],
+  '花名册': ['/roster.png'],
+  '业务提醒': ['/reminder.png'],
+  '考勤': ['/attendance.png'],
+  '薪资': ['/salary.png'],
+  '考核': ['/assessment.png'],
+  '流程管理': ['/workflow.png'],
+  '移动端': ['/移动端.jpg'],
+}
+
+const currentImage = computed(() => {
+  if (!selectedFeature.value) return null
+  const images = featureImages[selectedFeature.value]
+  if (!images || images.length === 0) return null
+  return images[currentImageIndex.value]
+})
+
+const currentImages = computed(() => {
+  if (!selectedFeature.value) return []
+  return featureImages[selectedFeature.value] || []
+})
+
+function prevImage() {
+  if (currentImageIndex.value > 0) {
+    currentImageIndex.value--
+  } else {
+    currentImageIndex.value = currentImages.value.length - 1
+  }
+}
+
+function nextImage() {
+  if (currentImageIndex.value < currentImages.value.length - 1) {
+    currentImageIndex.value++
+  } else {
+    currentImageIndex.value = 0
+  }
+}
+
+watch(selectedFeature, () => {
+  currentImageIndex.value = 0
+})
 
 const highlights = [
   {
