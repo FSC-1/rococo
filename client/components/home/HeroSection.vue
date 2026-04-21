@@ -25,8 +25,8 @@
         </div>
 
         <!-- Main Heading -->
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight fade-up" style="animation-delay: 100ms;">
-          {{ heroTitle }}
+        <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold text-gray-900 mb-6 leading-tight fade-up" style="animation-delay: 100ms;">
+          我们的努力都是为了让数字化<br class="hidden md:block" />更容易
         </h1>
 
         <!-- CTA Buttons -->
