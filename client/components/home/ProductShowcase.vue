@@ -154,7 +154,7 @@ const featureImages: Record<string, string[]> = {
   '员工信息集中管理': ['/roster.png'],
   '智能考勤薪资计算': ['/attendance.png', '/salary.png'],
   '流程审批自定义': ['/workflow.png'],
-  '移动端随时访问': ['/移动端.jpg'],
+  '移动端随时访问': ['/mobile.jpg'],
 }
 
 const currentImage = computed(() => {
