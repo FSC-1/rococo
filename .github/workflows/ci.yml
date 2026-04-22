@@ -30,10 +30,12 @@ jobs:
       - name: Build
         run: cd client && npm run generate
 
-- name: Copy generated files to repository root
+      - name: Copy generated files to repository root
         run: |
+          pwd
           ls -la client/dist/ | head -20
-          cp -rf client/dist/* . 2>&1 || rsync -r --
+          cp -r client/dist/. .
+          git status
 
       - name: Commit and push generated files
         run: |
