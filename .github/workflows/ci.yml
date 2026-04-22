@@ -10,11 +10,8 @@ on:
       - dev
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
 
     steps:
       - uses: actions/checkout@v6
@@ -25,10 +22,11 @@ jobs:
 
       - run: npm i -g --force corepack@latest && corepack enable
 
-- name: Install
+      - name: Install dependencies
+        run: cd client && npx nypm@latest i
 
       - name: Build
-        run: cd client && npx nuxt generate
+        run: cd client && npm run generate
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
