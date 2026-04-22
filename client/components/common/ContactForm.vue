@@ -66,24 +66,13 @@
       <!-- Source Selection -->
       <div class="space-y-3">
         <label class="block text-sm font-medium text-gray-700">您从哪里了解到我们？</label>
-        <div class="flex flex-wrap gap-3">
-          <label
-            v-for="option in sourceOptions"
-            :key="option"
-            class="inline-flex items-center gap-2 px-4 py-2 border rounded-full cursor-pointer transition-all duration-300"
-            :class="form.source.includes(option)
-              ? 'bg-primary-50 border-primary-500 text-primary-700'
-              : 'bg-gray-50 border-gray-200 text-gray-600 hover:border-primary-300 hover:bg-primary-50'"
-          >
-            <input
-              type="checkbox"
-              :value="option"
-              v-model="form.source"
-              class="hidden"
-            />
-            <span class="text-sm">{{ option }}</span>
-          </label>
-        </div>
+        <select
+          v-model="form.source"
+          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-gray-50 focus:bg-white"
+        >
+          <option value="" disabled>请选择</option>
+          <option v-for="option in sourceOptions" :key="option" :value="option">{{ option }}</option>
+        </select>
         <!-- Other source input -->
         <Transition
           enter-active-class="transition-all duration-300 ease-out"
@@ -93,7 +82,7 @@
           leave-from-class="opacity-100 translate-y-0"
           leave-to-class="opacity-0 -translate-y-2"
         >
-          <div v-if="form.source.includes('其他')" class="mt-3">
+          <div v-if="form.source === '其他'" class="mt-3">
             <input
               v-model="form.sourceOther"
               type="text"
@@ -150,7 +139,7 @@
 <script setup lang="ts">
 const { submitContact } = useStrapi()
 
-const sourceOptions = ['抖音', 'QQ', '微信公众号', '朋友推荐', '搜索引擎', '其他']
+const sourceOptions = ['QQ', '微信公众号', '朋友推荐', '搜索引擎', '其他']
 
 const form = reactive({
   name: '',
@@ -158,7 +147,7 @@ const form = reactive({
   email: '',
   phone: '',
   message: '',
-  source: [] as string[],
+  source: '',
   sourceOther: '',
 })
 
@@ -172,9 +161,9 @@ const submitForm = async () => {
   errorMessage.value = ''
 
   try {
-    // Process source: combine selected options with "其他" text if provided
-    let sourceValue = form.source.join(', ')
-    if (form.source.includes('其他') && form.sourceOther.trim()) {
+    // Process source: combine with "其他" text if provided
+    let sourceValue = form.source
+    if (form.source === '其他' && form.sourceOther.trim()) {
       sourceValue += `: ${form.sourceOther.trim()}`
     }
 
@@ -195,7 +184,7 @@ const submitForm = async () => {
       email: '',
       phone: '',
       message: '',
-      source: [],
+      source: '',
       sourceOther: '',
     })
   } catch (error) {
