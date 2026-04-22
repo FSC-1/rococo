@@ -1,8 +1,10 @@
 <template>
-  <section class="section-padding bg-gray-50 relative overflow-hidden">
-    <!-- Background decoration -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-secondary-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+  <section class="section-padding relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="/6_8.jpg" alt="" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gray-50/70"></div>
+    </div>
 
     <div class="container-custom relative z-10">
       <!-- Section Header -->

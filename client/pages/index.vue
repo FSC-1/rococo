@@ -6,8 +6,14 @@
     />
 
     <!-- Services Section -->
-    <section class="section-padding bg-white">
-      <div class="container-custom">
+    <section class="section-padding relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="/6_1.jpg" alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-white/70"></div>
+      </div>
+
+      <div class="container-custom relative z-10">
         <CommonSectionTitle
           title="核心服务"
           subtitle="四大服务模块，全方位助力企业数字化转型"
@@ -30,8 +36,14 @@
     <HomeNewsSection :news-list="newsList" />
 
     <!-- Contact Info -->
-    <section class="section-padding bg-white">
-      <div class="container-custom">
+    <section class="section-padding relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="/4_6.jpg" alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-white/70"></div>
+      </div>
+
+      <div class="container-custom relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
             <CommonSectionTitle
