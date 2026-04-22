@@ -1,3 +1,4 @@
+# GitHub Pages CI/CD workflow
 name: ci
 
 on:
