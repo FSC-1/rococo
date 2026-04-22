@@ -3,10 +3,10 @@ name: ci
 on:
   push:
     branches:
-      - main
+      - dev
   pull_request:
     branches:
-      - main
+      - dev
 
 jobs:
   lint:
@@ -27,7 +27,8 @@ jobs:
       - name: Lint
         run: npm run lint
 
-  test:
+  build:
+    needs: lint
     runs-on: ubuntu-latest
 
     steps:
@@ -42,8 +43,27 @@ jobs:
       - name: Install dependencies
         run: npx nypm@latest i
 
-      - name: Playground prepare
-        run: npm run dev:prepare
+      - name: Build
+        run: npm run generate
 
-      - name: Test
-        run: npm run test
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/dev'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
