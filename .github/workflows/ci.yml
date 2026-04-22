@@ -32,10 +32,7 @@ jobs:
 
       - name: Copy generated files to repository root
         run: |
-          pwd
-          ls -la client/dist/ | head -20
-          cp -r client/dist/. .
-          git status
+          cd client/dist && cp -a . /home/runner/work/rococo/rococo/
 
       - name: Commit and push generated files
         run: |
