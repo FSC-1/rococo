@@ -10,7 +10,7 @@ on:
       - dev
 
 jobs:
-  lint:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,48 +23,16 @@ jobs:
       - run: npm i -g --force corepack@latest && corepack enable
 
       - name: Install dependencies
-        run: npx nypm@latest i
-
-      - name: Lint
-        run: npm run lint
-
-  build:
-    needs: lint
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v6
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 20
-
-      - run: npm i -g --force corepack@latest && corepack enable
-
-      - name: Install dependencies
-        run: npx nypm@latest i
+        run: cd client && npx nypm@latest i
 
       - name: Build
-        run: npm run generate
+        run: cd client && npm run generate
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: client/dist
 
-  deploy:
-    needs: build
-    if: github.ref == 'refs/heads/dev'
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        if: github.ref == 'refs/heads/dev'
         uses: actions/deploy-pages@v4
