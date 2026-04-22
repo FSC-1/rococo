@@ -35,7 +35,3 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: client/dist
-
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/dev'
-        uses: actions/deploy-pages@v4
