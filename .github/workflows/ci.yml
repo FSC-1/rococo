@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v6
@@ -28,7 +30,15 @@ jobs:
       - name: Build
         run: cd client && npm run generate
 
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: client/dist
+      - name: Copy generated files to repository root
+        run: |
+          cp -r client/dist/* .
+          git status
+
+      - name: Commit and push generated files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: update generated static files [skip ci]"
+          git push
