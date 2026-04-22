@@ -32,10 +32,12 @@ jobs:
 
       - name: Copy generated files to repository root
         run: |
+          export LC_ALL=C.UTF-8
+          export LANG=C.UTF-8
           pwd
           ls -la client/dist/ | head -30
           echo "---"
-          find client/dist -name "*.jpg" -o -name "*.png" | head -30
+          find client/dist -name "移动*" | head -10
           echo "---"
           find client/dist -mindepth 1 -maxdepth 1 -exec cp -a {} . \;
           echo "---After copy---"
