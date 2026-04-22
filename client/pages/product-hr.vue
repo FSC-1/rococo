@@ -161,7 +161,7 @@ const featureImages: Record<string, string[]> = {
   '薪资': ['/salary.png'],
   '考核': ['/assessment.png'],
   '流程管理': ['/workflow.png'],
-  '移动端': ['/移动端.jpg'],
+  '移动端': ['/mobile.jpg'],
 }
 
 const currentImage = computed(() => {
