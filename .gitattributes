@@ -1,0 +1,16 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Binary files
+*.jpg binary
+*.png binary
+*.gif binary
+*.eps binary
+*.ico binary
+*.pdf binary
+
+# JS files should be treated as binary to prevent line ending corruption
+*.js binary
+
+# Workflow files
+.github/** binary

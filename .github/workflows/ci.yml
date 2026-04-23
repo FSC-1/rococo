@@ -35,11 +35,11 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
           pwd
-          ls -la client/dist/ | head -30
+          ls -la client/.output/public/ | head -30
           echo "---"
-          find client/dist -name "移动*" | head -10
+          find client/.output/public -name "移动*" | head -10
           echo "---"
-          find client/dist -mindepth 1 -maxdepth 1 -exec cp -a {} . \;
+          find client/.output/public -mindepth 1 -maxdepth 1 -exec cp -a {} . \;
           echo "---After copy---"
           ls -la | grep 移动 || echo "移动端.jpg not found after copy"
 
