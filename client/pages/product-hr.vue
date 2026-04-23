@@ -154,14 +154,14 @@ const features = [
 
 // Feature images mapping
 const featureImages: Record<string, string[]> = {
-  '仪表盘': ['/dashboard.png', '/dashboard-1.png', '/dashboard-2.png'],
-  '花名册': ['/roster.png'],
-  '业务提醒': ['/reminder.png'],
-  '考勤': ['/attendance.png'],
-  '薪资': ['/salary.png'],
-  '考核': ['/assessment.png'],
-  '流程管理': ['/workflow.png'],
-  '移动端': ['/mobile.jpg'],
+  '仪表盘': ['dashboard.png', 'dashboard-1.png', 'dashboard-2.png'],
+  '花名册': ['roster.png'],
+  '业务提醒': ['reminder.png'],
+  '考勤': ['attendance.png'],
+  '薪资': ['salary.png'],
+  '考核': ['assessment.png'],
+  '流程管理': ['workflow.png'],
+  '移动端': ['mobile.jpg'],
 }
 
 const currentImage = computed(() => {
