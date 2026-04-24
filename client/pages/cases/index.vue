@@ -3,8 +3,12 @@
     <!-- Hero -->
     <section class="bg-gradient-to-br from-primary-50 to-secondary-50 section-padding">
       <div class="container-custom text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">顧客事例</h1>
-        <p class="text-xl text-gray-600">成功事例展示、品質が実力を証明します</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          {{ locale === 'ja' ? '顧客事例' : '客户案例' }}
+        </h1>
+        <p class="text-xl text-gray-600">
+          {{ locale === 'ja' ? '成功事例展示、品質が実力を証明します' : '成功案例展示，品质证明实力' }}
+        </p>
       </div>
     </section>
 
@@ -64,7 +68,7 @@
 
         <div v-else class="text-center text-gray-500 py-12">
           <Icon name="ph:folder-open" class="w-16 h-16 mx-auto mb-4 text-gray-300" />
-          <p>ただいま事例がありません</p>
+          <p>{{ locale === 'ja' ? 'ただいま事例がありません' : '暂无案例' }}</p>
         </div>
       </div>
     </section>
@@ -73,7 +77,12 @@
     <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <div class="max-w-3xl mx-auto">
-          <CommonSectionTitle title="協力を求める" title-en="協力を求める" subtitle="同様のニーズをお持ちの場合は、お問い合わせください" subtitle-en="同様のニーズをお持ちの場合は、お問い合わせください" />
+          <CommonSectionTitle
+            :title="locale === 'ja' ? '協力を求める' : '寻求合作'"
+            :title-en="locale === 'ja' ? '協力を求める' : 'Seek Cooperation'"
+            :subtitle="locale === 'ja' ? '同様のニーズをお持ちの場合は、お問い合わせください' : '如有类似需求，请联系我们'"
+            :subtitle-en="locale === 'ja' ? '同様のニーズをお持ちの場合は、お問い合わせください' : 'Contact us if you have similar needs'"
+          />
           <div class="mt-8">
             <CommonContactForm />
           </div>
@@ -86,19 +95,24 @@
 <script setup lang="ts">
 import { caseCategories } from '~/utils/constants'
 
+const { locale } = useLocale()
+
 useSeoMeta({
-  title: '顧客事例 - 寧波楽科科情報技術有限公司',
-  description: '楽科科グループの成功事例をご覧ください。AI自動化、ESG、対日開発、ServiceNowなどの分野での専門的能力について',
+  title: locale.value === 'ja' ? '顧客事例 - 寧波楽科科情報技術有限公司' : '客户案例 - 宁波乐科科信息技术有限公司',
+  description: locale.value === 'ja' ? '楽科科グループの成功事例をご覧ください。AI自動化、ESG、対日開発、ServiceNowなどの分野での専門的能力について' : '乐科科集团的成功案例展示，AI自动化、ESG、对日开发、ServiceNow等专业能力介绍',
 })
 
 const route = useRoute()
 const { fetchCaseStudies } = useStrapi()
 
 const selectedCategory = ref((route.query.category as string) || 'all')
-const categories = [
-  { value: 'all', label: 'すべて' },
-  ...caseCategories,
-]
+const categories = computed(() => [
+  { value: 'all', label: locale.value === 'ja' ? 'すべて' : '全部' },
+  ...caseCategories.map(cat => ({
+    value: cat.value,
+    label: locale.value === 'ja' ? cat.label : cat.labelEn,
+  })),
+])
 
 // Fetch cases
 const response = await fetchCaseStudies({ pageSize: 50 })
@@ -121,6 +135,6 @@ const filteredCases = computed(() => {
 
 const getCategoryLabel = (value: string) => {
   const cat = caseCategories.find((c) => c.value === value)
-  return cat ? cat.label : value
+  return cat ? (locale.value === 'ja' ? cat.label : cat.labelEn) : value
 }
 </script>

@@ -16,7 +16,7 @@
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-3 gap-8 items-center">
           <!-- Left: Features -->
-          <div class="md:col-span-1 bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100/50">
+          <div class="md:col-span-1 bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
             <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               HR++ 人事管理系统
             </h3>
