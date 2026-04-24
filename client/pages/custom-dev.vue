@@ -3,14 +3,14 @@
     <!-- Hero -->
     <section class="bg-gradient-to-br from-primary-50 to-secondary-50 section-padding">
       <div class="container-custom text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">定制化开发</h1>
-        <p class="text-xl text-primary-600 font-medium mb-3">源于业务，高于需求的开发流程</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">カスタマイズ開発</h1>
+        <p class="text-xl text-primary-600 font-medium mb-3">業務に根ざし、要員を超える開発フロー</p>
         <div class="flex justify-center gap-4 mb-6">
-          <span class="text-gray-600">高性价比解决方案</span>
+          <span class="text-gray-600">高いコストパフォーマンスのソリューション</span>
           <span class="text-gray-400">|</span>
-          <span class="text-gray-600">甩手式服务</span>
+          <span class="text-gray-600">ワンストップサービス</span>
         </div>
-        <p class="text-lg text-gray-600">为您提供从需求分析、系统设计、开发实施到运营维护的全流程定制化软件开发服务</p>
+        <p class="text-lg text-gray-600">要件分析、システム設計、開発実施から運用保守まで、全工程のカスタマイズ软件开发サービスを提供します</p>
       </div>
     </section>
 
@@ -18,8 +18,10 @@
     <section class="section-padding bg-white">
       <div class="container-custom">
         <CommonSectionTitle
-          title="服务内容"
-          subtitle="根据客户需求，提供从需求分析、系统设计、开发实施到运营维护的全流程定制化软件开发服务"
+          title="サービス内容"
+          title-en="サービス内容"
+          subtitle="お客様のご要望に応じて、要件分析、システム設計、開発実施から運用保守まで、全工程のカスタマイズ软件开发サービスを提供します"
+          subtitle-en="お客様のご要望に応じて、要件分析、システム設計、開発実施から運用保守まで、全工程のカスタマイズ软件开发サービスを提供します"
         />
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
@@ -38,8 +40,10 @@
     <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <CommonSectionTitle
-          title="服务流程"
-          subtitle="标准化流程管理，确保项目高质量交付"
+          title="サービスフロー"
+          title-en="サービスフロー"
+          subtitle="標準化されたフロー管理により、高品質なプロジェクト納品を確保します"
+          subtitle-en="標準化されたフロー管理により、高品質なプロジェクト納品を確保します"
         />
 
         <div class="mt-8">
@@ -67,22 +71,24 @@
       <div class="container-custom">
         <div class="max-w-4xl mx-auto">
           <CommonSectionTitle
-            title="对日开发优势"
-            subtitle="我们拥有丰富的日系企业项目经验，特别擅长制造业、服务业等领域的业务系统开发"
+            title="対日開発優勢"
+            title-en="対日開発優勢"
+            subtitle="豊富な日系企業プロジェクト経験を有し、製造業、サービス業などの分野の業務システム構築に特に通じております"
+            subtitle-en="豊富な日系企業プロジェクト経験を有し、製造業、サービス業などの分野の業務システム構築に特に通じております"
           />
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div class="text-center">
               <div class="text-4xl font-bold text-primary-600 mb-2">8+</div>
-              <p class="text-gray-600">年对日开发经验</p>
+              <p class="text-gray-600">年の対日開発経験</p>
             </div>
             <div class="text-center">
               <div class="text-4xl font-bold text-primary-600 mb-2">50+</div>
-              <p class="text-gray-600">成功交付项目</p>
+              <p class="text-gray-600">つのプロジェクト完了</p>
             </div>
             <div class="text-center">
               <div class="text-4xl font-bold text-primary-600 mb-2">30+</div>
-              <p class="text-gray-600">日语项目经理</p>
+              <p class="text-gray-600">名の日本語プロジェクトマネージャー</p>
             </div>
           </div>
         </div>
@@ -92,15 +98,15 @@
     <!-- Customer Cases -->
     <section class="section-padding bg-white">
       <div class="container-custom">
-        <CommonSectionTitle title="客户案例" subtitle="查看定制化开发的成功案例" />
+        <CommonSectionTitle title="顧客事例" title-en="顧客事例" subtitle="カスタマイズ開発の成功事例をご覧ください" subtitle-en="カスタマイズ開発の成功事例をご覧ください" />
         <div class="flex flex-wrap justify-center gap-4 mt-6">
           <NuxtLink to="/cases?category=esg" class="btn-primary inline-flex items-center">
             <Icon name="ph:folder-open" class="w-5 h-5 mr-2" />
-            ESG 平台案例
+            ESG プラットフォーム事例
           </NuxtLink>
           <NuxtLink to="/cases?category=japan-dev" class="btn-primary inline-flex items-center">
             <Icon name="ph:folder-open" class="w-5 h-5 mr-2" />
-            对日开发案例
+            対日開発事例
           </NuxtLink>
         </div>
       </div>
@@ -110,7 +116,7 @@
     <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="max-w-3xl mx-auto">
-          <CommonSectionTitle title="开始您的项目" subtitle="联系我们，获取专业的定制化开发咨询服务" />
+          <CommonSectionTitle title="プロジェクトを始める" title-en="プロジェクトを始める" subtitle="お問い合わせいただき、専門的なカスタマイズ開発コンサルティングサービスをご覧ください" subtitle-en="お問い合わせいただき、専門的なカスタマイズ開発コンサルティングサービスをご覧ください" />
           <div class="mt-8">
             <CommonContactForm />
           </div>
@@ -122,24 +128,24 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: '定制化开发 - 宁波乐科科信息技术有限公司',
-  description: '提供企业软件定制、微信小程序开发、移动应用开发、对日开发等全流程服务',
+  title: 'カスタマイズ開発 - 寧波楽科科情報技術有限公司',
+  description: '企業ソフトウェアカスタマイズ、微信ミニプログラム開発、移动应用開発、対日開発など全工程サービス提供',
 })
 
 const serviceItems = [
-  { icon: 'ph:code', title: '企业软件定制', description: '源于业务，高于需求。提供高性价比的定制化解决方案' },
-  { icon: 'ph:device-mobile', title: '微信小程序开发', description: '中国市场扩张必需的微信小程序开发能力' },
-  { icon: 'ph:app-window', title: '移动应用开发', description: '多终端多平台开发，信息共享更高效，业务处理更便捷' },
-  { icon: 'ph:translate', title: '对日开发', description: '全案专业日语沟通，多年大型对日项目开发维护' },
+  { icon: 'ph:code', title: '企業ソフトウェアカスタマイズ', description: '業務に根ざし要件を超える価値を提供。高コストパフォーマンスのカスタマイズソリューション' },
+  { icon: 'ph:device-mobile', title: '微信ミニプログラム開発', description: '中国市場展開に必須の微信ミニプログラム開発能力' },
+  { icon: 'ph:app-window', title: 'モバイルアプリケーション開発', description: 'マルチエンド・マルチプラットフォーム開発で、情報共有効率向上、業務処理便捷化' },
+  { icon: 'ph:translate', title: '対日開発', description: '全工程プロフェッショナル日本語対応、多年大型対日プロジェクト開発保守' },
 ]
 
 const processSteps = [
-  { title: '初步沟通', description: '了解企业信息化的目的、想要解决的课题，就项目效果部分与企业达成一致意见' },
-  { title: '确定需求', description: '基于企业当下以及未来的业务发展规划，结合企业想法，给出专业意见建议' },
-  { title: '方案报价', description: '基于前期沟通确认的需求，出具项目方案与对应报价' },
-  { title: '签订协议', description: '双方就开发周期、沟通机制、交付成果物、价格等关键事项达成一致，签订书面协议' },
-  { title: '程序开发', description: '按协议约定推进开发工作，过程中定期向企业汇报开发进度，并提前告知企业需配合事项' },
-  { title: '项目验收', description: '根据约定的验收标准/式样进行项目测试与验证，双方签订验收报告' },
-  { title: '软件交付', description: '企业签署验收单，正式交付软件产品' },
+  { title: '初期unikasi', description: '企業情報化の目的、解決したい課題を理解し、プロジェクト効果について企业与一致意見达成' },
+  { title: '要件確定', description: '企業の現在および将来の業務発展計画に基づき、企業の想法と合わせて、専門的な意見・提案を提供' },
+  { title: '方案・コEstimate', description: '前期コミュニケーションで確認した要件に基づき、プロジェクト方案と对应报价を提供' },
+  { title: '協定締結', description: '開発周期、コミュニケーション機制、納品成果物、価格など主要事項について双方一致し、書面協定締結' },
+  { title: '程序開発', description: '協定に基づいて開発作業を推進し、進捗状況を定期的に企業に報告し、配合が必要な事项を事前に通知' },
+  { title: 'プロジェクト検収', description: '約定した検収基準/仕様に基づきプロジェクトのテストと検証を行い、双方检収報告書に記入' },
+  { title: 'ソフトウェア納品', description: '企業検収書に署名し、正式にソフトウェア製品を納品' },
 ]
 </script>

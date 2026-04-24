@@ -21,27 +21,27 @@
         <!-- Badge -->
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100/80 backdrop-blur-sm rounded-full text-primary-700 text-sm font-medium mb-8 scale-in" style="animation-delay: 0ms;">
           <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-          专业的数字化转型服务商
+          {{ locale === 'ja' ? '专业なデジタルトランスフォーメーションサービス提供商' : '专业的数字化转型服务商' }}
         </div>
 
         <!-- Main Heading -->
         <div class="mb-6 fade-up" style="animation-delay: 100ms;">
           <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-700 mb-4 leading-[1.8]">
-            我们的追求是让数字化
+            {{ locale === 'ja' ? '私たちの追求は、デジタル化を通じて' : '我们的追求是让数字化' }}
           </p>
           <p class="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.6] bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
-            切实助力企业发展
+            {{ locale === 'ja' ? '企業の発展に実質的な価値をもたらすことです' : '切实助力企业发展' }}
           </p>
         </div>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up" style="animation-delay: 300ms;">
           <NuxtLink to="/cases" class="btn-primary group">
-            <span>查看案例</span>
+            <span>{{ locale === 'ja' ? '事例を見る' : '查看案例' }}</span>
             <Icon name="ph:arrow-right" class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
           </NuxtLink>
           <NuxtLink to="/about" class="btn-outline group">
-            <span>了解更多</span>
+            <span>{{ locale === 'ja' ? '詳細を見る' : '了解更多' }}</span>
             <Icon name="ph:chat-circle-text" class="w-5 h-5 ml-2 transition-transform group-hover:rotate-12" />
           </NuxtLink>
         </div>
@@ -50,15 +50,15 @@
         <div class="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200/50 fade-up" style="animation-delay: 400ms;">
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">30+</div>
-            <div class="text-gray-500 text-sm mt-1">年行业经验</div>
+            <div class="text-gray-500 text-sm mt-1">{{ locale === 'ja' ? '年の業界経験' : '年行业经验' }}</div>
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-secondary-600 to-secondary-500 bg-clip-text text-transparent">200+</div>
-            <div class="text-gray-500 text-sm mt-1">成功案例</div>
+            <div class="text-gray-500 text-sm mt-1">{{ locale === 'ja' ? '成功事例' : '成功案例' }}</div>
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">50+</div>
-            <div class="text-gray-500 text-sm mt-1">专业团队</div>
+            <div class="text-gray-500 text-sm mt-1">{{ locale === 'ja' ? '専門チーム' : '专业团队' }}</div>
           </div>
         </div>
       </div>
@@ -75,6 +75,8 @@
 </template>
 
 <script setup lang="ts">
+const { t, locale } = useLocale()
+
 defineProps<{
   heroTitle: string
 }>()

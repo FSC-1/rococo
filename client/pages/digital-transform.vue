@@ -3,10 +3,10 @@
     <!-- Hero -->
     <section class="bg-gradient-to-br from-primary-50 to-secondary-50 section-padding">
       <div class="container-custom text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">数字化转型</h1>
-        <p class="text-2xl text-primary-600 font-medium mb-4">做您数字化转型的陪跑者，全程护航企业升级之路</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">デジタルトランスフォーメーション</h1>
+        <p class="text-2xl text-primary-600 font-medium mb-4">企業のデジタルトランスフォーメーションを伴走し、企業昇級の道を全程で見守ります</p>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          我们提供一站式数字化咨询与落地服务，以专业咨询为基石，为企业数字化建设全面赋能
+          ワンストップデジタルコンサルティングと実行サービス、専門的なコンサルティングを基盤に企業のデジタル構築を全面的に支援します
         </p>
       </div>
     </section>
@@ -15,8 +15,10 @@
     <section class="section-padding bg-white">
       <div class="container-custom">
         <CommonSectionTitle
-          title="企业数字化转型面临的痛点"
-          subtitle="了解挑战，才能更好地解决问题"
+          title="企業デジタルトランスフォーメーションが直面する課題"
+          title-en="企業デジタルトランスフォーメーションが直面する課題"
+          subtitle="課題を理解することで、より効果的に問題を解決できます"
+          subtitle-en="課題を理解することで、より効果的に問題を解決できます"
         />
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -24,27 +26,27 @@
             <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
               <Icon name="ph:warning-circle" class="w-7 h-7 text-red-600" />
             </div>
-            <h3 class="text-xl font-semibold mb-3">缺乏数字化战略规划</h3>
+            <h3 class="text-xl font-semibold mb-3">デジタル戦略規劃の欠如</h3>
             <p class="text-gray-600">
-              企业在数字化转型过程中，往往缺乏明确的战略规划，导致投入大量人力、物力，而转型效率不高，从而导致资源浪费。
+              企業はデジタルトランスフォーメーションの過程で、多くの場合、明確な戦略規劃がなく，大量の人力・物力を投入しても変革効率不高で資源の無駄遣いにつながる.
             </p>
           </div>
           <div class="card p-6 border-t-4 border-orange-500">
             <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
               <Icon name="ph:users" class="w-7 h-7 text-orange-600" />
             </div>
-            <h3 class="text-xl font-semibold mb-3">专业水平不足</h3>
+            <h3 class="text-xl font-semibold mb-3">専門レベル不足</h3>
             <p class="text-gray-600">
-              企业在数字化转型过程中，需要了解外面市场上的解决方案，需要领导者拥有专业水平才能做出正确的判断。
+              企業はデジタルトランスフォーメーションの過程で、市場でのソリューションを理解する必要があり、リーダーが専門的知識を持ち、正しい判断を下す必要がある.
             </p>
           </div>
           <div class="card p-6 border-t-4 border-purple-500">
             <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
               <Icon name="ph:shield-check" class="w-7 h-7 text-purple-600" />
             </div>
-            <h3 class="text-xl font-semibold mb-3">数据安全问题</h3>
+            <h3 class="text-xl font-semibold mb-3">データ安全问题</h3>
             <p class="text-gray-600">
-              数字化转型会涉及到大量的数据处理和传输，如果企业缺乏足够的数据安全保护措施，容易导致数据泄露和安全风险。
+              デジタルトランスフォーメーションは大量のデータ処理と伝送涉及到おり、もし企業が必要なデータセキュリティ保護措置を欠いている場合容易データ漏洩とセキュリティリスクが生じやすい。
             </p>
           </div>
         </div>
@@ -55,18 +57,20 @@
     <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <CommonSectionTitle
-          title="IT咨询"
-          subtitle="贯通业务与IT的全流程DX咨询服务"
+          title="ITコンサルティング"
+          title-en="ITコンサルティング"
+          subtitle="業務とITを贯通する全工程のDXコンサルティングサービス"
+          subtitle-en="業務とITを贯通する全工程のDXコンサルティングサービス"
         />
 
         <div class="max-w-4xl mx-auto mt-8">
           <div class="bg-white rounded-2xl p-8 shadow-sm mb-8">
             <p class="text-lg text-gray-700 leading-relaxed">
-              我们提供一站式数字化咨询与落地服务，以专业咨询为基石，为企业数字化建设全面赋能。通过精准诊断业务需求、衔接优质解决方案、驱动业务流程优化，我们致力于助力OA、ERP等关键系统成功部署与价值释放。
+              ワンストップデジタルコンサルティングと実行サービス、専門的なコンサルティングを基盤に企業のデジタル構築を全面的に支援します。精密な業務要件診断、優れたソリューションの連携、業務プロセス最適化を通じて、OA、ERPなどの重要システムが正常に導入され、価値を解放することを支援します。
             </p>
           </div>
 
-          <h3 class="text-2xl font-bold text-center mb-6">咨询服务内容</h3>
+          <h3 class="text-2xl font-bold text-center mb-6">コンサルティングサービス内容</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             <div v-for="item in consultingItems" :key="item.title" class="bg-white rounded-xl p-5 shadow-sm flex items-start gap-4">
               <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -86,8 +90,10 @@
     <section class="section-padding bg-white">
       <div class="container-custom">
         <CommonSectionTitle
-          title="协助系统落地"
-          subtitle="助力关键系统成功部署与价值释放"
+          title="システム導入支援"
+          title-en="システム導入支援"
+          subtitle="重要システムの正常な導入と価値解放を支援します"
+          subtitle-en="重要システムの正常な導入と価値解放を支援します"
         />
 
         <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -97,7 +103,7 @@
               <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center">
                 <Icon name="ph:factory" class="w-7 h-7 text-white" />
               </div>
-              <h3 class="text-xl font-semibold">智能制造</h3>
+              <h3 class="text-xl font-semibold">スマート製造</h3>
             </div>
             <div class="space-y-4">
               <div class="bg-white rounded-xl p-4 flex items-center gap-4">
@@ -105,8 +111,8 @@
                   <Icon name="ph:database" class="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900">核心系统（ERP）</h4>
-                  <p class="text-gray-600 text-sm">企业资源计划系统</p>
+                  <h4 class="font-semibold text-gray-900">コアシステム（ERP）</h4>
+                  <p class="text-gray-600 text-sm">企業資源計画システム</p>
                 </div>
               </div>
               <div class="bg-white rounded-xl p-4 flex items-center gap-4">
@@ -114,8 +120,8 @@
                   <Icon name="ph:calendar-check" class="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900">生产计划系统（APS）</h4>
-                  <p class="text-gray-600 text-sm">高级计划与排程</p>
+                  <h4 class="font-semibold text-gray-900">生産計画システム（APS）</h4>
+                  <p class="text-gray-600 text-sm">高度計画とスケジューリング</p>
                 </div>
               </div>
               <div class="bg-white rounded-xl p-4 flex items-center gap-4">
@@ -123,8 +129,8 @@
                   <Icon name="ph:cpu" class="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900">制造执行系统（MES）</h4>
-                  <p class="text-gray-600 text-sm">生产过程管理</p>
+                  <h4 class="font-semibold text-gray-900">製造実行システム（MES）</h4>
+                  <p class="text-gray-600 text-sm">生産プロセス管理</p>
                 </div>
               </div>
             </div>
@@ -136,7 +142,7 @@
               <div class="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center">
                 <Icon name="ph:buildings" class="w-7 h-7 text-white" />
               </div>
-              <h3 class="text-xl font-semibold">业务效率</h3>
+              <h3 class="text-xl font-semibold">業務効率</h3>
             </div>
             <div class="space-y-4">
               <div class="bg-white rounded-xl p-4 flex items-center gap-4">
@@ -144,8 +150,8 @@
                   <Icon name="ph:files" class="w-5 h-5 text-green-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900">OA系统</h4>
-                  <p class="text-gray-600 text-sm">办公自动化系统</p>
+                  <h4 class="font-semibold text-gray-900">OAシステム</h4>
+                  <p class="text-gray-600 text-sm">事務自動化システム</p>
                 </div>
               </div>
               <div class="bg-white rounded-xl p-4 flex items-center gap-4">
@@ -153,8 +159,8 @@
                   <Icon name="ph:flow-arrow" class="w-5 h-5 text-green-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900">业务流程标准化</h4>
-                  <p class="text-gray-600 text-sm">流程优化与管理</p>
+                  <h4 class="font-semibold text-gray-900">業務プロセス標準化</h4>
+                  <p class="text-gray-600 text-sm">プロセス最適化と管理</p>
                 </div>
               </div>
               <div class="bg-white rounded-xl p-4 flex items-center gap-4">
@@ -162,8 +168,8 @@
                   <Icon name="ph:chart-bar" class="w-5 h-5 text-green-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900">数据决策分析</h4>
-                  <p class="text-gray-600 text-sm">数据驱动决策</p>
+                  <h4 class="font-semibold text-gray-900">データ意思決定分析</h4>
+                  <p class="text-gray-600 text-sm">データ駆動型意思決定</p>
                 </div>
               </div>
             </div>
@@ -173,7 +179,7 @@
         <div class="text-center mt-8">
           <NuxtLink to="/cases?category=consulting" class="btn-primary inline-flex items-center">
             <Icon name="ph:folder-open" class="w-5 h-5 mr-2" />
-            查看 IT咨询 客户案例
+            ITコンサルティング顧客事例を見る
           </NuxtLink>
         </div>
       </div>
@@ -183,18 +189,20 @@
     <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <CommonSectionTitle
-          title="旧系统重构"
-          subtitle="老旧系统现代化改造专家"
+          title="レガシーシステム再構築"
+          title-en="レガシーシステム再構築"
+          subtitle="レガシーシステム近代化改造の専門家"
+          subtitle-en="レガシーシステム近代化改造の専門家"
         />
 
         <div class="max-w-4xl mx-auto mt-8">
           <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 mb-8">
             <p class="text-lg text-gray-700 leading-relaxed">
-              帮助企业将老旧系统进行现代化改造，提升系统性能、安全性和可维护性。在实现与现有系统对接的同时，进行可持续的系统运营。平滑过渡、持续运营，让企业IT资产焕发新生。
+              企業のレガシーシステムを近代的に改造し、システムパフォーマンス、セキュリティ、保守性を向上させます。既存のシステムとの連携を実現し、持続可能なシステム運用を行います。スムーズな移行と継続的な運用で、企業のIT資産に新たな価値をもたらします。
             </p>
           </div>
 
-          <h3 class="text-2xl font-bold text-center mb-6">服务内容</h3>
+          <h3 class="text-2xl font-bold text-center mb-6">サービス内容</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
               <div class="flex items-start gap-4">
@@ -202,8 +210,8 @@
                   <Icon name="ph:gear" class="w-6 h-6 text-primary-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">遗留系统现代化</h4>
-                  <p class="text-gray-600 text-sm">老旧系统升级改造，提升性能、安全性和可维护性</p>
+                  <h4 class="font-semibold text-gray-900 mb-2">レガシーシステム近代化</h4>
+                  <p class="text-gray-600 text-sm">旧システムのアップグレード改造、パフォーマンス、セキュリティ、保守性の向上</p>
                 </div>
               </div>
             </div>
@@ -213,8 +221,8 @@
                   <Icon name="ph:cloud-arrow-up" class="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">系统迁移</h4>
-                  <p class="text-gray-600 text-sm">从旧平台迁移到新平台，确保数据完整性</p>
+                  <h4 class="font-semibold text-gray-900 mb-2">システム移行</h4>
+                  <p class="text-gray-600 text-sm">旧プラットフォームから新プラットフォームへ、データ完全性を確保</p>
                 </div>
               </div>
             </div>
@@ -224,8 +232,8 @@
                   <Icon name="ph:blueprint" class="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">架构优化</h4>
-                  <p class="text-gray-600 text-sm">系统架构重新设计，提升系统扩展性</p>
+                  <h4 class="font-semibold text-gray-900 mb-2">アーキテクチャ最適化</h4>
+                  <p class="text-gray-600 text-sm">システムアーキテクチャ再設計、スケーラビリティ向上</p>
                 </div>
               </div>
             </div>
@@ -235,8 +243,8 @@
                   <Icon name="ph:broom" class="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">技术债务清理</h4>
-                  <p class="text-gray-600 text-sm">解决历史遗留技术问题，提升代码质量</p>
+                  <h4 class="font-semibold text-gray-900 mb-2">技術負債清理</h4>
+                  <p class="text-gray-600 text-sm">歴史的技術問題の解決、コード品質向上</p>
                 </div>
               </div>
             </div>
@@ -245,7 +253,7 @@
           <div class="text-center mt-8">
             <NuxtLink to="/cases?category=system-refactor" class="btn-secondary inline-flex items-center">
               <Icon name="ph:folder-open" class="w-5 h-5 mr-2" />
-              查看 系统重构 客户案例
+              システム再構築顧客事例を見る
             </NuxtLink>
           </div>
         </div>
@@ -256,7 +264,7 @@
     <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="max-w-3xl mx-auto">
-          <CommonSectionTitle title="开始数字化转型" subtitle="联系我们，获取专业的数字化转型咨询服务" />
+          <CommonSectionTitle title="デジタルトランスフォーメーションを開始する" title-en="デジタルトランスフォーメーションを開始する" subtitle="お問い合わせいただき、専門的なデジタルトランスフォーメーションコンサルティングサービスをご覧ください" subtitle-en="お問い合わせいただき、専門的なデジタルトランスフォーメーションコンサルティングサービスをご覧ください" />
           <div class="mt-8">
             <CommonContactForm />
           </div>
@@ -268,16 +276,16 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: '数字化转型 - 宁波乐科科信息技术有限公司',
-  description: '提供IT咨询、数字化转型规划、旧系统重构等服务，做您数字化转型的陪跑者',
+  title: 'デジタルトランスフォーメーション - 寧波楽科科情報技術有限公司',
+  description: 'ITコンサルティング、デジタルトランスフォーメーション規劃、レガシーシステム再構築などのサービス提供、企业のデジタルトランスフォーメーションを伴走します',
 })
 
 const consultingItems = [
-  { icon: 'ph:stethoscope', title: '系统诊断', description: '全面诊断现有IT系统' },
-  { icon: 'ph:user-circle', title: '系统顾问', description: '专业IT规划建议' },
-  { icon: 'ph:blueprint', title: '系统化规划', description: '制定转型路线图' },
-  { icon: 'ph:handshake', title: '供应商选定与谈判', description: '评估并选择合适供应商' },
-  { icon: 'ph:gantt-chart', title: '项目管理', description: '确保项目按时交付' },
-  { icon: 'ph:trend-up', title: '改善·改革咨询', description: '持续优化支持' },
+  { icon: 'ph:stethoscope', title: 'システム診断', description: '既存のITシステムを全面的に診断' },
+  { icon: 'ph:user-circle', title: 'システムアドバイザー', description: '専門的IT規劃提案' },
+  { icon: 'ph:blueprint', title: 'システム化規劃', description: 'トランスフォーメーションロードマップの策定' },
+  { icon: 'ph:handshake', title: 'サプライヤー選定・交渉', description: '適切なサプライヤーの評価と選択' },
+  { icon: 'ph:gantt-chart', title: 'プロジェクト管理', description: 'プロジェクト定時納品を確保' },
+  { icon: 'ph:trend-up', title: '改善・改革コンサルティング', description: '継続的最適化サポート' },
 ]
 </script>

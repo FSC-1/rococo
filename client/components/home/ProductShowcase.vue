@@ -8,8 +8,8 @@
     <div class="container-custom relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="section-title mb-4">核心产品</h2>
-        <p class="section-subtitle">我们自主研发的数字化产品，助力企业信息化建设</p>
+        <h2 class="section-title mb-4">{{ locale === 'ja' ? 'コア製品' : '核心产品' }}</h2>
+        <p class="section-subtitle">{{ locale === 'ja' ? '私たちが独自開発したデジタル製品により、企業の情報化構築を支援します' : '我们自主研发的数字化产品，助力企业信息化建设' }}</p>
       </div>
 
       <!-- Product Card -->
@@ -21,7 +21,7 @@
               HR++ 人事管理系统
             </h3>
             <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-              更懂你的HR系统，让人事管理更简单高效
+              {{ locale === 'ja' ? 'あなたをより理解するHRシステム、人事管理をよりシンプルかつ効率的に' : '更懂你的HR系统，让人事管理更简单高效' }}
             </p>
 
             <!-- Features with click to show images -->
@@ -36,7 +36,7 @@
                 <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-primary-600 group-hover:scale-110 transition-all duration-300">
                   <Icon :name="feature.icon" class="w-4 h-4 text-primary-600 group-hover:text-white transition-colors" />
                 </div>
-                <span class="text-gray-700">{{ feature.title }}</span>
+                <span class="text-gray-700">{{ locale === 'ja' ? feature.titleEn : feature.title }}</span>
               </li>
             </ul>
 
@@ -47,7 +47,7 @@
               rel="noopener noreferrer"
               class="btn-primary inline-flex items-center group"
             >
-              <span>访问官网</span>
+              <span>{{ locale === 'ja' ? '公式サイトにアクセス' : '访问官网' }}</span>
               <Icon name="ph:arrow-up-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
             </a>
           </div>
@@ -66,7 +66,7 @@
               <div v-else class="w-full h-full flex items-center justify-center text-center text-gray-400">
                 <div>
                   <Icon name="ph:image" class="w-16 h-16 mx-auto mb-4" />
-                  <p>点击功能查看演示</p>
+                  <p>{{ locale === 'ja' ? '機能をクリックしてデモを表示' : '点击功能查看演示' }}</p>
                 </div>
               </div>
 
@@ -120,33 +120,37 @@
 </template>
 
 <script setup lang="ts">
-const selectedFeature = ref<string | null>('员工信息集中管理')
+const props = defineProps<{
+  locale: 'ja' | 'zh'
+}>()
+
+const selectedFeature = ref<string | null>(props.locale === 'ja' ? '従業員情報の一元管理' : '员工信息集中管理')
 const currentImageIndex = ref(0)
 const showLightbox = ref(false)
 
 function prevImage() {
-  const currentIndex = features.findIndex(f => f.title === selectedFeature.value)
+  const currentIndex = features.findIndex(f => (props.locale === 'ja' ? f.titleEn : f.title) === selectedFeature.value)
   if (currentIndex > 0) {
-    selectedFeature.value = features[currentIndex - 1].title
+    selectedFeature.value = props.locale === 'ja' ? features[currentIndex - 1].titleEn : features[currentIndex - 1].title
   } else {
-    selectedFeature.value = features[features.length - 1].title
+    selectedFeature.value = props.locale === 'ja' ? features[features.length - 1].titleEn : features[features.length - 1].title
   }
 }
 
 function nextImage() {
-  const currentIndex = features.findIndex(f => f.title === selectedFeature.value)
+  const currentIndex = features.findIndex(f => (props.locale === 'ja' ? f.titleEn : f.title) === selectedFeature.value)
   if (currentIndex < features.length - 1) {
-    selectedFeature.value = features[currentIndex + 1].title
+    selectedFeature.value = props.locale === 'ja' ? features[currentIndex + 1].titleEn : features[currentIndex + 1].title
   } else {
-    selectedFeature.value = features[0].title
+    selectedFeature.value = props.locale === 'ja' ? features[0].titleEn : features[0].title
   }
 }
 
 const features = [
-  { icon: 'ph:users', title: '员工信息集中管理' },
-  { icon: 'ph:chart-bar', title: '智能考勤薪资计算' },
-  { icon: 'ph:flow-arrow', title: '流程审批自定义' },
-  { icon: 'ph:device-mobile', title: '移动端随时访问' },
+  { icon: 'ph:users', title: '员工信息集中管理', titleEn: '従業員情報の一元管理' },
+  { icon: 'ph:chart-bar', title: '智能考勤薪资计算', titleEn: '智能勤怠給与計算' },
+  { icon: 'ph:flow-arrow', title: '流程审批自定义', titleEn: 'プロセス承認カスタマイズ' },
+  { icon: 'ph:device-mobile', title: '移动端随时访问', titleEn: 'モバイル対応' },
 ]
 
 // Feature images mapping
@@ -155,6 +159,10 @@ const featureImages: Record<string, string[]> = {
   '智能考勤薪资计算': ['attendance.png', 'salary.png'],
   '流程审批自定义': ['workflow.png'],
   '移动端随时访问': ['mobile.jpg'],
+  '従業員情報の一元管理': ['roster.png'],
+  '智能勤怠給与計算': ['attendance.png', 'salary.png'],
+  'プロセス承認カスタマイズ': ['workflow.png'],
+  'モバイル対応': ['mobile.jpg'],
 }
 
 const currentImage = computed(() => {

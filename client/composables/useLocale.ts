@@ -4,12 +4,23 @@ type Locale = 'ja' | 'zh'
 type LocaleMessages = typeof zhLocale
 
 const localeMessages: Record<Locale, LocaleMessages> = {
-  'ja': {} as LocaleMessages, // Japanese content - will use zh locale as base
-  'zh': zhLocale, // Chinese content
+  'ja': {} as LocaleMessages,
+  'zh': zhLocale,
 }
 
 export function useLocale() {
-  const locale = useState<Locale>('locale', () => 'ja') // Default to Japanese
+  // Try to get initial locale from localStorage, fallback to Japanese
+  const getInitialLocale = (): Locale => {
+    if (import.meta.client) {
+      const stored = localStorage.getItem('rococo-locale')
+      if (stored === 'ja' || stored === 'zh') {
+        return stored
+      }
+    }
+    return 'ja'
+  }
+
+  const locale = useState<Locale>('locale', getInitialLocale)
 
   const isJapanese = computed(() => locale.value === 'ja')
   const isChinese = computed(() => locale.value === 'zh')
@@ -18,6 +29,7 @@ export function useLocale() {
     locale.value = newLocale
     if (import.meta.client) {
       document.documentElement.lang = newLocale
+      localStorage.setItem('rococo-locale', newLocale)
     }
   }
 
@@ -40,7 +52,7 @@ export function useLocale() {
           if (value && typeof value === 'object' && k2 in value) {
             value = value[k2]
           } else {
-            return key // Return key if not found
+            return key
           }
         }
         break

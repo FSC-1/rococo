@@ -8,17 +8,17 @@
 
       <!-- Title -->
       <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
-        {{ title }}
+        {{ locale === 'ja' ? titleEn : title }}
       </h3>
 
       <!-- Description -->
       <p class="text-gray-600 mb-6 leading-relaxed">
-        {{ description }}
+        {{ locale === 'ja' ? descriptionEn : description }}
       </p>
 
       <!-- Link -->
       <div class="flex items-center text-primary-600 font-medium group-hover:translate-x-2 transition-transform duration-300">
-        <span>了解更多</span>
+        <span>{{ locale === 'ja' ? '詳細を見る' : '了解更多' }}</span>
         <Icon name="ph:arrow-right" class="w-5 h-5 ml-2" />
       </div>
     </div>
@@ -26,10 +26,14 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useLocale()
+
 defineProps<{
   icon: string
   title: string
+  titleEn: string
   description: string
+  descriptionEn: string
   to: string
 }>()
 </script>

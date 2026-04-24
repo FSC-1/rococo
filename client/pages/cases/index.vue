@@ -3,8 +3,8 @@
     <!-- Hero -->
     <section class="bg-gradient-to-br from-primary-50 to-secondary-50 section-padding">
       <div class="container-custom text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">客户案例</h1>
-        <p class="text-xl text-gray-600">成功案例展示，品质见证实力</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">顧客事例</h1>
+        <p class="text-xl text-gray-600">成功事例展示、品質が実力を証明します</p>
       </div>
     </section>
 
@@ -64,7 +64,7 @@
 
         <div v-else class="text-center text-gray-500 py-12">
           <Icon name="ph:folder-open" class="w-16 h-16 mx-auto mb-4 text-gray-300" />
-          <p>暂无案例</p>
+          <p>ただいま事例がありません</p>
         </div>
       </div>
     </section>
@@ -73,7 +73,7 @@
     <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <div class="max-w-3xl mx-auto">
-          <CommonSectionTitle title="寻求合作" subtitle="如果您有类似需求，欢迎联系我们" />
+          <CommonSectionTitle title="協力を求める" title-en="協力を求める" subtitle="同様のニーズをお持ちの場合は、お問い合わせください" subtitle-en="同様のニーズをお持ちの場合は、お問い合わせください" />
           <div class="mt-8">
             <CommonContactForm />
           </div>
@@ -87,8 +87,8 @@
 import { caseCategories } from '~/utils/constants'
 
 useSeoMeta({
-  title: '客户案例 - 宁波乐科科信息技术有限公司',
-  description: '查看乐科科的成功案例，了解我们在AI自动化、ESG、对日开发、ServiceNow等领域的专业能力',
+  title: '顧客事例 - 寧波楽科科情報技術有限公司',
+  description: '楽科科グループの成功事例をご覧ください。AI自動化、ESG、対日開発、ServiceNowなどの分野での専門的能力について',
 })
 
 const route = useRoute()
@@ -96,7 +96,7 @@ const { fetchCaseStudies } = useStrapi()
 
 const selectedCategory = ref((route.query.category as string) || 'all')
 const categories = [
-  { value: 'all', label: '全部' },
+  { value: 'all', label: 'すべて' },
   ...caseCategories,
 ]
 
