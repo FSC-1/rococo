@@ -1,9 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <HomeHeroSection
-      :hero-title="config?.heroTitle || '我们的努力都是为了让数字化，更容易'"
-    />
+    <HomeHeroSection />
 
     <!-- Services Section -->
     <section class="section-padding relative overflow-hidden">
