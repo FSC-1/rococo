@@ -4,8 +4,8 @@
     <section class="bg-gradient-to-br from-primary-50 to-secondary-50 section-padding">
       <div class="container-custom text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">低代码平台开发</h1>
-        <p class="text-xl text-primary-600 font-medium">基于低代码和 SaaS 模型的企业服务管理平台</p>
-        <p class="text-lg text-gray-600 mt-2">实现 IT 业务的高效化和可视化，快速、灵活的业务应用部署</p>
+        <p class="text-xl text-primary-600 font-medium">快速构建，灵活部署，让业务创新触手可及</p>
+        <p class="text-lg text-gray-600 mt-2">基于 ServiceNow 与 Microsoft Power Platform 等平台，实现多终端开发</p>
       </div>
     </section>
 
@@ -16,28 +16,28 @@
           <div>
             <h2 class="text-3xl font-bold mb-4">ServiceNow</h2>
             <p class="text-gray-600 mb-6">
-              ServiceNow 是基于低代码和 SaaS 模型的企业服务管理平台，核心目标是实现 IT 业务的高效化和可视化。
+              利用ServiceNow、Microsoft Power Platform等低代码平台，帮助企业快速构建业务应用，实现业务流程的标准化和自动化。ServiceNow是一款基于低代码和SaaS模型的企业服务管理平台，通过简化开发流程和提供云端服务，实现快速、灵活的业务应用部署。
             </p>
             <div class="space-y-4">
               <div class="flex items-start">
                 <Icon name="ph:check-circle" class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 class="font-semibold">跨系统应用集成</h4>
-                  <p class="text-gray-600 text-sm">实现数据一体化，打通企业信息孤岛</p>
+                  <p class="text-gray-600 text-sm">实现数据一体化</p>
                 </div>
               </div>
               <div class="flex items-start">
                 <Icon name="ph:check-circle" class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 class="font-semibold">内容自动连接</h4>
-                  <p class="text-gray-600 text-sm">提高开发速度，降低开发成本</p>
+                  <p class="text-gray-600 text-sm">提高开发速度</p>
                 </div>
               </div>
               <div class="flex items-start">
                 <Icon name="ph:check-circle" class="w-6 h-6 text-primary-600 mr-3 flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 class="font-semibold">简化业务流程</h4>
-                  <p class="text-gray-600 text-sm">提高工作效率，实现流程自动化</p>
+                  <p class="text-gray-600 text-sm">提高工作效率</p>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@
                 <Icon name="ph:check-circle" class="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 class="font-semibold">工具实施支援</h4>
-                  <p class="text-gray-600 text-sm">PowerApps/PowerAutomate等工具的专业实施</p>
+                  <p class="text-gray-600 text-sm">PowerApps/PowerAutomate等工具的实施支援</p>
                 </div>
               </div>
               <div class="flex items-start">

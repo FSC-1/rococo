@@ -5,6 +5,7 @@
       <div class="container-custom text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Rococo 集团</h1>
         <p class="text-xl text-gray-600">珍视"心"，成为客户值得信赖的数字化转型合作伙伴</p>
+        <p class="text-lg text-primary-600 mt-2">1994年创业，东证标准板块上市（JPX）</p>
       </div>
     </section>
 

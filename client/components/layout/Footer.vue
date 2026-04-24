@@ -88,6 +88,7 @@
 const quickLinks = [
   { name: '定制化开发', path: '/custom-dev' },
   { name: '低代码平台', path: '/low-code' },
+  { name: 'AI自动化解决方案', path: '/ai-automation' },
   { name: '数字化转型', path: '/digital-transform' },
   { name: '产品-HR++', path: '/product-hr' },
   { name: '客户案例', path: '/cases' },
@@ -98,6 +99,7 @@ const services = [
   '定制化软件开发',
   'ServiceNow开发',
   'Power Platform',
+  'AI自动化解决方案',
   '数字化咨询',
   '系统重构',
 ]

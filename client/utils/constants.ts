@@ -34,6 +34,7 @@ export const caseCategories = [
   { value: 'power-platform', label: 'Power Platform' },
   { value: 'consulting', label: 'IT咨询' },
   { value: 'system-refactor', label: '系统重构' },
+  { value: 'ai-automation', label: 'AI自动化' },
 ]
 
 // 联系表单状态

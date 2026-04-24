@@ -88,7 +88,7 @@ import { caseCategories } from '~/utils/constants'
 
 useSeoMeta({
   title: '客户案例 - 宁波乐科科信息技术有限公司',
-  description: '查看乐科科的成功案例，了解我们在ESG、对日开发、ServiceNow等领域的专业能力',
+  description: '查看乐科科的成功案例，了解我们在AI自动化、ESG、对日开发、ServiceNow等领域的专业能力',
 })
 
 const route = useRoute()

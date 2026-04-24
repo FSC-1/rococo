@@ -208,6 +208,7 @@ const navItems = [
       { name: 'Power Platform', path: '/power-platform' },
     ],
   },
+  { name: 'AI自动化解决方案', path: '/ai-automation' },
   { name: '客户案例', path: '/cases' },
   {
     name: '关于我们',

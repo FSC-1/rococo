@@ -27,10 +27,10 @@
         <!-- Main Heading -->
         <div class="mb-6 fade-up" style="animation-delay: 100ms;">
           <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-700 mb-4 leading-[1.8]">
-            我们的努力都是为了
+            我们的追求是让数字化
           </p>
           <p class="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.6] bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
-            让数字化，更容易
+            切实助力企业发展
           </p>
         </div>
 
