@@ -9,8 +9,8 @@
     <div class="container-custom relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="section-title mb-4">最新资讯</h2>
-        <p class="section-subtitle">了解乐科科最新动态</p>
+        <h2 class="section-title mb-4">{{ sectionTitle }}</h2>
+        <p class="section-subtitle">{{ sectionSubtitle }}</p>
       </div>
 
       <!-- News Grid -->
@@ -34,7 +34,7 @@
             <!-- Category badge overlay -->
             <div class="absolute top-4 left-4">
               <span class="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-primary-600 shadow-sm">
-                {{ news.category === 'news' ? '新闻' : '公告' }}
+                {{ news.category === 'news' ? categoryNews : categoryAnnounce }}
               </span>
             </div>
           </div>
@@ -59,7 +59,7 @@
 
             <!-- Read more -->
             <div class="mt-4 flex items-center text-primary-600 font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
-              <span>阅读更多</span>
+              <span>{{ readMore }}</span>
               <Icon name="ph:arrow-right" class="w-4 h-4 ml-1" />
             </div>
           </div>
@@ -71,13 +71,13 @@
         <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <Icon name="ph:newspaper" class="w-12 h-12 text-gray-300" />
         </div>
-        <p class="text-gray-500 text-lg">暂无资讯</p>
+        <p class="text-gray-500 text-lg">{{ noNews }}</p>
       </div>
 
       <!-- View More Button -->
       <div v-if="newsList.length > 0" class="text-center mt-12">
         <NuxtLink to="/cases" class="btn-outline inline-flex items-center group">
-          <span>查看更多</span>
+          <span>{{ viewMore }}</span>
           <Icon name="ph:arrow-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
         </NuxtLink>
       </div>
@@ -90,9 +90,27 @@ defineProps<{
   newsList: any[]
 }>()
 
+const { locale } = useLocale()
+
+const sectionTitle = computed(() => locale.value === 'ja' ? '最新情報' : '最新资讯')
+const sectionSubtitle = computed(() => locale.value === 'ja' ? '楽科科の最新動向的了解' : '了解乐科科最新动态')
+const categoryNews = computed(() => locale.value === 'ja' ? 'ニュース' : '新闻')
+const categoryAnnounce = computed(() => locale.value === 'ja' ? '公告' : '公告')
+const readMore = computed(() => locale.value === 'ja' ? '続きを読む' : '阅读更多')
+const noNews = computed(() => locale.value === 'ja' ? 'まだ情報はありません' : '暂无资讯')
+const viewMore = computed(() => locale.value === 'ja' ? 'もっと見る' : '查看更多')
+
 const formatDate = (date: string) => {
   if (!date) return ''
-  return new Date(date).toLocaleDateString('zh-CN', {
+  const dateObj = new Date(date)
+  if (locale.value === 'ja') {
+    return dateObj.toLocaleDateString('ja-JP', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  }
+  return dateObj.toLocaleDateString('zh-CN', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

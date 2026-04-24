@@ -69,7 +69,7 @@
             <div class="absolute right-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <div class="bg-white rounded-xl shadow-xl p-4 border border-gray-100">
                 <div class="text-center mb-2">
-                  <p class="text-sm font-medium text-gray-700">销售微信</p>
+                  <p class="text-sm font-medium text-gray-700">営業WeChat</p>
                 </div>
                 <div class="w-32 h-32 bg-gray-100 rounded-lg flex items-center justify-center">
                   <Icon name="ph:qr-code" class="w-16 h-16 text-gray-400" />
@@ -106,6 +106,15 @@
             </div>
             <span class="font-medium">+86-574-28860655</span>
           </a>
+
+          <!-- Language Switcher -->
+          <button
+            @click="toggleLocale"
+            class="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-300 border border-gray-200 rounded-lg hover:border-primary-300"
+          >
+            <Icon name="ph:globe" class="w-4 h-4" />
+            <span class="font-medium text-sm">{{ locale === 'ja' ? '日本語' : '中文' }}</span>
+          </button>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -178,47 +187,54 @@
 </template>
 
 <script setup lang="ts">
+const { locale, toggleLocale } = useLocale()
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
 const activeDropdown = ref<string | null>(null)
 const mobileExpandedMenu = ref<string | null>(null)
 
-const navItems = [
-  { name: '首页', path: '/' },
+type NavItem = {
+  name: string
+  path?: string
+  children?: { name: string; path: string }[]
+}
+
+const navItems = computed<NavItem[]>(() => [
+  { name: locale.value === 'zh' ? '首页' : 'ホーム', path: '/' },
   {
-    name: '业务介绍',
+    name: locale.value === 'zh' ? '业务介绍' : 'ビジネス紹介',
     children: [
-      { name: '定制化开发', path: '/custom-dev' },
-      { name: '低代码平台', path: '/low-code' },
-      { name: '数字化转型', path: '/digital-transform' },
-      { name: '产品-HR++', path: '/product-hr' },
+      { name: locale.value === 'zh' ? '定制化开发' : 'カスタマイズ開発', path: '/custom-dev' },
+      { name: locale.value === 'zh' ? '低代码平台' : 'ローコードプラットフォーム', path: '/low-code' },
+      { name: locale.value === 'zh' ? '数字化转型' : 'デジタルトランスフォーメーション', path: '/digital-transform' },
+      { name: locale.value === 'zh' ? '产品-HR++' : '製品-HR++', path: '/product-hr' },
     ],
   },
   {
-    name: '数字化转型',
+    name: locale.value === 'zh' ? '数字化转型' : 'デジタルトランスフォーメーション',
     children: [
-      { name: 'IT咨询', path: '/tech-consulting' },
-      { name: '旧系统重构', path: '/digital-transform' },
+      { name: locale.value === 'zh' ? 'IT咨询' : 'ITコンサル', path: '/tech-consulting' },
+      { name: locale.value === 'zh' ? '旧系统重构' : '旧システム再構築', path: '/system-refactor' },
     ],
   },
   {
-    name: '低代码平台',
+    name: locale.value === 'zh' ? '低代码平台' : 'ローコードプラットフォーム',
     children: [
-      { name: 'ServiceNow开发', path: '/servicenow' },
-      { name: 'Power Platform', path: '/power-platform' },
+      { name: locale.value === 'zh' ? 'ServiceNow开发' : 'ServiceNow開発', path: '/servicenow' },
+      { name: locale.value === 'zh' ? 'Power Platform' : 'Power Platform', path: '/power-platform' },
     ],
   },
-  { name: 'AI自动化解决方案', path: '/ai-automation' },
-  { name: '客户案例', path: '/cases' },
+  { name: locale.value === 'zh' ? 'AI自动化解决方案' : 'AI自動化ソリューション', path: '/ai-automation' },
+  { name: locale.value === 'zh' ? '客户案例' : '導入事例', path: '/cases' },
   {
-    name: '关于我们',
+    name: locale.value === 'zh' ? '公司简介' : '会社概要',
     children: [
-      { name: 'Rococo集团', path: '/about-group' },
-      { name: 'Rococo中国', path: '/about-china' },
-      { name: '加入我们', path: '/join-us' },
+      { name: locale.value === 'zh' ? 'Rococo集团' : 'ロココグループ', path: '/about-group' },
+      { name: locale.value === 'zh' ? 'Rococo中国' : 'ロココ中国', path: '/about-china' },
+      { name: locale.value === 'zh' ? '招聘页' : '採用情報', path: '/join-us' },
     ],
   },
-]
+])
 
 function showDropdown(name: string) {
   activeDropdown.value = name
@@ -228,7 +244,7 @@ function hideDropdown() {
   activeDropdown.value = null
 }
 
-function isActive(item: typeof navItems[0]) {
+function isActive(item: NavItem) {
   if (item.children && item.children.length) {
     return item.children.some(c => route.path === c.path)
   }

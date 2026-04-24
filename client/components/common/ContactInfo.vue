@@ -4,7 +4,7 @@
       <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
         <Icon name="ph:chat-circle-text" class="w-5 h-5 text-primary-600" />
       </div>
-      联系我们
+      {{ locale === 'ja' ? 'お問い合わせ' : '联系我们' }}
     </h3>
     <div class="space-y-6">
       <div class="flex items-start group">
@@ -12,8 +12,8 @@
           <Icon name="ph:map-pin" class="w-6 h-6 text-primary-600" />
         </div>
         <div>
-          <p class="font-semibold text-gray-900 mb-1">地址</p>
-          <p class="text-gray-600">宁波市鄞州区天童北路933号<br/>和邦大厦A1802室</p>
+          <p class="font-semibold text-gray-900 mb-1">{{ locale === 'ja' ? '住所' : '地址' }}</p>
+          <p class="text-gray-600">{{ locale === 'ja' ? '浙江省寧波市鄞州区天童北路933号和邦大厦A1802室' : '宁波市鄞州区天童北路933号<br/>和邦大厦A1802室' }}</p>
         </div>
       </div>
       <div class="flex items-start group">
@@ -21,7 +21,7 @@
           <Icon name="ph:phone" class="w-6 h-6 text-primary-600" />
         </div>
         <div>
-          <p class="font-semibold text-gray-900 mb-1">电话</p>
+          <p class="font-semibold text-gray-900 mb-1">{{ locale === 'ja' ? '電話' : '电话' }}</p>
           <a href="tel:+86-574-28860655" class="text-primary-600 hover:text-primary-700 transition-colors">+86-574-28860655</a>
         </div>
       </div>
@@ -30,10 +30,14 @@
           <Icon name="ph:envelope" class="w-6 h-6 text-primary-600" />
         </div>
         <div>
-          <p class="font-semibold text-gray-900 mb-1">邮箱</p>
+          <p class="font-semibold text-gray-900 mb-1">{{ locale === 'ja' ? 'メール' : '邮箱' }}</p>
           <a href="mailto:nb_sales@rococo.co.jp" class="text-primary-600 hover:text-primary-700 transition-colors">nb_sales@rococo.co.jp</a>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const { locale } = useLocale()
+</script>
