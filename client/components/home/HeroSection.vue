@@ -21,16 +21,16 @@
         <!-- Badge -->
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100/80 backdrop-blur-sm rounded-full text-primary-700 text-sm font-medium mb-8 scale-in" style="animation-delay: 0ms;">
           <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-          {{ locale === 'ja' ? '专业なデジタルトランスフォーメーションサービス提供商' : '专业的数字化转型服务商' }}
+          {{ locale === 'zh' ? '专业的数字化转型服务商' : '専門的なデジタルトランスフォーメーションサービスプロバイダー' }}
         </div>
 
         <!-- Main Heading -->
         <div class="mb-6 fade-up" style="animation-delay: 100ms;">
           <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-700 mb-4 leading-[1.8]">
-            {{ locale === 'ja' ? '私たちの追求は、デジタル化を通じて' : '我们的追求是让数字化' }}
+            {{ locale === 'zh' ? '我们的努力都是为了' : '私たちのすべての取り組みは' }}
           </p>
           <p class="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.6] bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
-            {{ locale === 'ja' ? '企業の発展に実質的な価値をもたらすことです' : '切实助力企业发展' }}
+            {{ locale === 'zh' ? '让数字化，更容易' : '情報化をより容易にする' }}
           </p>
         </div>
 
@@ -75,9 +75,5 @@
 </template>
 
 <script setup lang="ts">
-const { t, locale } = useLocale()
-
-defineProps<{
-  heroTitle: string
-}>()
+const { locale } = useLocale()
 </script>

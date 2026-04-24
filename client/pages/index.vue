@@ -1,9 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <HomeHeroSection
-      :hero-title="locale === 'ja' ? '私たちの追求は、デジタル化を通じて企業の発展に実質的な価値をもたらすことです。' : '我们的追求是让数字化切实助力企业发展'"
-    />
+    <HomeHeroSection />
 
     <!-- Services Section -->
     <section class="section-padding relative overflow-hidden">
