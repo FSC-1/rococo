@@ -113,7 +113,7 @@
             class="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-300 border border-gray-200 rounded-lg hover:border-primary-300"
           >
             <Icon name="ph:globe" class="w-4 h-4" />
-            <span class="font-medium text-sm">{{ locale === 'ja' ? '日本語' : '中文' }}</span>
+            <span class="font-medium text-sm">{{ locale === 'zh' ? '日文' : '中文' }}</span>
           </button>
         </div>
 
