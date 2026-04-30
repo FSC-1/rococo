@@ -17,7 +17,7 @@
             <p class="text-lg text-gray-600 leading-relaxed">
               {{ locale === 'zh'
                 ? 'Rococo集团创立于1994年，是一家以"心"为核心理念的日本IT服务企业。正如公司名称的由来，我们珍视"心"，在日常的企业活动中始终贯彻这一理念，致力于成为客户值得信赖的数字化转型合作伙伴。'
-                : 'Rococoグループは1994年に設立され、「心」を核心理念とする日本のITサービス企業です。公司名称の由来のように、私たちは「心」を珍しび、日常の企業活動において常にこの理念を貫き、顧客から信頼されるデジタル変革のパートナーになることを<minimax:tool_call>ています。' }}
+                : 'Rococoグループは1994年に設立され、「心」を核心理念とする日本のITサービス企業です。公司名称の由来のように、私たちは「心」を珍しび、日常の企業活動において常にこの理念を貫き、顧客から信頼されるデジタル変革のパートナーになることです。' }}
             </p>
           </div>
 
@@ -59,7 +59,7 @@
                     <p class="text-sm text-gray-600">{{ locale === 'zh' ? '营销中心 + 研发中心' : 'マーケティングセンター + R&Dセンター' }}</p>
                   </div>
                   <div class="bg-white rounded-xl p-4 shadow-sm">
-                    <p class="font-medium text-gray-900">{{ locale === 'zh' ? '菲律宾（马尼拉、宿雾）' : 'フィリピン（マリティン、セebu）' }}</p>
+                    <p class="font-medium text-gray-900">{{ locale === 'zh' ? '菲律宾（马尼拉、宿雾）' : 'フィリピン（マリティン、セブ）' }}</p>
                   </div>
                   <div class="bg-white rounded-xl p-4 shadow-sm">
                     <p class="font-medium text-gray-900">{{ locale === 'zh' ? '波兰' : 'ポーランド' }}</p>
