@@ -1,31 +1,5 @@
-# Dependencies
-node_modules/
-
-# Build outputs
-.nuxt/
-.output/
-dist/
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# IDE
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-
-# Logs
-*.log
-npm-debug.log*
-
-# OS
+rococo/node_modules
+rococo/_nuxt
+rococo/.nuxt
+.git
 .DS_Store
-Thumbs.db
-
-# Cache
-.cache/
-
-# Claude settings
-.claude/
